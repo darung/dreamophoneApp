@@ -4,3 +4,6 @@
 node_modules/
 platforms/
 plugins/
+ios-sim/
+npm-debug.log
+resources/
