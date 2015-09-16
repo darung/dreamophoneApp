@@ -1,0 +1,14 @@
+ <ion-header-bar class="bar bar-header bar-dark">
+    <h1 class="title">Search The Movie Database</h1>
+  </ion-header-bar>
+  <ion-content>
+    <ion-list>
+      <div class="list">
+
+        <a ng-repeat="dream in dreams" href="#/dream/{{dream.id}}" class="item item-thumbnail-left">
+          {{dream.content}}
+        </a>
+
+      </div>
+    </ion-list>
+  </ion-content>

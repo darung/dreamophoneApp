@@ -11,7 +11,7 @@ angular.module('dreamophone.services', [])
     }, 
     {
       id: 2,
-      content: 'First test dream'
+      content: 'Second test dream'
     } 
   ];
 
