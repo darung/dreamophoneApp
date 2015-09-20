@@ -1,23 +1,14 @@
-angular.module('dreamophone.services', [])
+angular.module('dreamophone.services', ['ngResource'])
 
-.factory('Dreams', function() {
-  // Might use a resource here that returns a JSON array
-
-  // Some fake testing data
-  var dreams = [
-    {
-      id: 1,
-      content: 'First test dream'
-    }, 
-    {
-      id: 2,
-      content: 'Second test dream'
-    } 
-  ];
-
-  return {
-    all: function() {
-      return dreams;
+.factory('Dreams', function($resource) {
+  return $resource('http://localhost:3000/api/dream/:id',
+    {},
+    { 
+      'get':    {method:'GET'},
+      'save':   {method:'POST'},
+      'query':  {method:'GET'},
+      'remove': {method:'DELETE'},
+      'delete': {method:'DELETE'} 
     }
-  };
+  );
 });
