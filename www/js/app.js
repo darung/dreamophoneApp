@@ -24,10 +24,15 @@ angular.module('dreamophone', ['ionic', 'dreamophone.controllers', 'dreamophone.
       
       // if the url matches something like /dream/88 then this route
       // will fire off the DreamDetailCtrl (controllers.js)
-      .state('dreamView', {
+      .state('dream', {
         url: '/dream/:dreamId',
-        templateUrl: '/dream.html',
+        templateUrl: 'templates/dream.html',
         controller: 'DreamDetailCtrl'
+        // resolve: {
+        //   dream: function(Dreams) {
+        //     return ItemsService.getItem()
+        //   }
+        // }
       });
 
     $urlRouterProvider.otherwise('/');

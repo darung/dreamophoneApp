@@ -1,0 +1,15 @@
+ <ion-header-bar class="bar bar-header bar-dark">
+    <h1 class="title">Dream</h1>
+  </ion-header-bar>
+  <ion-content>
+    <div>
+      {{dream.content}}
+    </div>
+    <ion-list>
+      <div class="list">
+        <div ng-repeat="comment in dream.comments" class="item item-thumbnail-left">
+          {{comment.content}}
+        </div>
+      </div>
+    </ion-list>
+  </ion-content>
