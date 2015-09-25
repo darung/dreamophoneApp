@@ -4,11 +4,9 @@
   <ion-content>
     <ion-list>
       <div class="list">
-
         <a ng-repeat="dream in dreams" href="#/dream/{{dream.id}}" class="item item-thumbnail-left">
-          {{dream.content}}
+          {{dream.content | cut:true:100:' ...'}}
         </a>
-
       </div>
       <ion-infinite-scroll 
         ng-if="moreDreamsAvailable" 

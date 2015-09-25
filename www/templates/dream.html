@@ -2,12 +2,11 @@
     <h1 class="title">Dream</h1>
   </ion-header-bar>
   <ion-content>
-    <div>
-      {{dream.content}}
-    </div>
+    <div class="item-thumbnail-left">
+      <div ng-bind-html="dream.content"></div>
     <ion-list>
       <div class="list">
-        <div ng-repeat="comment in dream.comments" class="item item-thumbnail-left">
+        <div ng-repeat="comment in dream.links.comments" class="item item-thumbnail-left">
           {{comment.content}}
         </div>
       </div>

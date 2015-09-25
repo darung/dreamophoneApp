@@ -1,4 +1,10 @@
-angular.module('dreamophone', ['ionic', 'dreamophone.controllers', 'dreamophone.services'])
+// define empty controllers, services, filters so we don't need to
+// have the first one with dependecies and the rest with none
+angular.module('dreamophone.controllers', []);
+angular.module('dreamophone.services', []);
+angular.module('dreamophone.filters', []);
+
+angular.module('dreamophone', ['ionic', 'dreamophone.controllers', 'dreamophone.services', 'dreamophone.filters'])
 
   .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -28,13 +34,7 @@ angular.module('dreamophone', ['ionic', 'dreamophone.controllers', 'dreamophone.
         url: '/dream/:dreamId',
         templateUrl: 'templates/dream.html',
         controller: 'DreamDetailCtrl'
-        // resolve: {
-        //   dream: function(Dreams) {
-        //     return ItemsService.getItem()
-        //   }
-        // }
       });
 
     $urlRouterProvider.otherwise('/');
   })
-

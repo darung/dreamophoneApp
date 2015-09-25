@@ -1,4 +1,4 @@
-angular.module('dreamophone.controllers', [])
+angular.module('dreamophone.controllers')
 
 	.controller('HomeCtrl', function($scope, $ionicSideMenuDelegate, Dreams) {
 		$scope.moreDreamsAvailable = true;
@@ -12,7 +12,8 @@ angular.module('dreamophone.controllers', [])
 		$scope.nextPage = function(){
 
 			var dreamsQuery = Dreams.query(
-				{ page: $scope.page },
+				// get page x, preview so we don't show things like comments
+				{ page: $scope.page, preview: 1 },
 				function(){
 					var page = parseInt( dreamsQuery.page.number ),
 						pageSize = parseInt( dreamsQuery.page.size ),
@@ -33,19 +34,4 @@ angular.module('dreamophone.controllers', [])
 				}
 			);
 		};
-	})
-
-	.controller('DreamDetailCtrl', function($scope, $state, $ionicSideMenuDelegate, Dreams) {
-		$scope.dream = {};
-
-		$scope.openMenu = function () {
-			$ionicSideMenuDelegate.toggleLeft();
-		};
-
-		var dreamQuery = Dreams.query(
-			{ id: $state.params.dreamId },
-			function(){
-				$scope.dream = dreamQuery.item;
-			}
-		);
-	});	
+	});
